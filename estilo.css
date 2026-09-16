@@ -399,7 +399,30 @@ footer {
     transform: scale(1.1);
 }
 
-@media (max-width: 430px){
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.project-img {
+    height: 200px;
+    overflow: hidden;
+}
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px){
     header {
         position: static;
     }
@@ -408,7 +431,73 @@ footer {
         padding: 1rem;
         gap: 1rem;
     }
-    .hero-content, .nav-links {
+    .nav-links {
+        gap: 1.5rem;
+    }
+    .hero {
+        padding-top: 2rem;
+        max-height: none;
+        min-height: auto;
+    }
+    .hero-content {
         flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+    .hero-image {
+        justify-content: center;
+    }
+    .hero-image img {
+        max-width: 250px;
+    }
+    .social-links {
+        justify-content: center;
+    }
+    section {
+        padding: 3rem 5%;
+    }
+    .grid-conocimientos {
+        grid-template-columns: 1fr;
+    }
+    .categoria-conocimiento h3 {
+        font-size: 1.3rem;
+    }
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+    .contacto {
+        padding: 3rem 1.5rem;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px){
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    .hero-text h2 {
+        font-size: 1.2rem;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
+    .project-tech span {
+        font-size: 0.75rem;
     }
 }
