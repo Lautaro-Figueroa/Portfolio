@@ -421,6 +421,54 @@ footer {
     margin-top: auto;
 }
 
+/* Íconos de Font Awesome con el mismo tamaño que los logos */
+.icono-fa {
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Portada de proyecto sin captura: ícono centrado */
+.project-img-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--darker-bg), #1f1b3d);
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+
+.tag-equipo {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ubicacion {
+    font-size: 1rem !important;
+    margin-bottom: .8rem !important;
+}
+.ubicacion i {
+    color: var(--primary-color);
+    margin-right: .3rem;
+}
+
+.link-mail {
+    color: var(--primary-color);
+}
+
+.footer-content {
+    gap: 1.2rem;
+}
+.footer-content a {
+    color: var(--gray-text);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+.footer-content a:hover {
+    color: var(--primary-color);
+}
+
 /* Responsive */
 @media (max-width: 768px){
     header {
