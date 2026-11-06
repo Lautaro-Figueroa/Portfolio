@@ -429,6 +429,10 @@ footer {
     color: var(--primary-color);
 }
 
+.icono-redondeado {
+    border-radius: 8px;
+}
+
 /* Portada de proyecto sin captura: ícono centrado */
 .project-img-icono {
     display: flex;
