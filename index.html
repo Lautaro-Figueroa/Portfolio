@@ -226,17 +226,24 @@
         <section id="contacto" class="contacto">
             <h2 class="section-title">Contacto</h2>
             <p>¿Tenés una propuesta o una consulta? Escribime a <a class="link-mail" href="mailto:lautarofigueroalnf@gmail.com">lautarofigueroalnf@gmail.com</a> o completá el formulario.</p>
-            <form action="mailto:lautarofigueroalnf@gmail.com" method="post" enctype="text/plain">
+            <form id="form-contacto" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="0104efac-a22c-40a5-835c-406478a489a1">
+                <input type="hidden" name="subject" value="Nuevo mensaje desde tu portfolio">
+                <input type="hidden" name="from_name" value="Portfolio Lautaro Figueroa">
+                <!-- Anti-spam: campo invisible que solo completan los robots -->
+                <input type="checkbox" name="botcheck" class="campo-oculto" tabindex="-1" autocomplete="off">
+
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                <input type="text" id="nombre" name="name" placeholder="Tu nombre" required>
 
                 <label for="email">Correo electrónico</label>
                 <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
 
                 <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje acá" required></textarea>
+                <textarea id="mensaje" name="message" rows="5" placeholder="Escribí tu mensaje acá" required></textarea>
 
                 <button type="submit" class="btn">Enviar mensaje</button>
+                <p id="form-estado" class="form-estado" role="status" aria-live="polite"></p>
             </form>
         </section>
 
@@ -292,6 +299,39 @@
                 img.addEventListener('keydown', function (e) {
                     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(img); }
                 });
+            });
+
+            // Formulario de contacto: envío sin salir de la página
+            const form = document.getElementById('form-contacto');
+            const estado = document.getElementById('form-estado');
+            const botonEnviar = form.querySelector('button[type="submit"]');
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                botonEnviar.disabled = true;
+                botonEnviar.textContent = 'Enviando...';
+                estado.className = 'form-estado';
+                estado.textContent = '';
+                try {
+                    const respuesta = await fetch(form.action, {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json' },
+                        body: new FormData(form)
+                    });
+                    const datos = await respuesta.json();
+                    if (respuesta.ok && datos.success) {
+                        estado.classList.add('ok');
+                        estado.textContent = '¡Mensaje enviado! Te respondo a la brevedad.';
+                        form.reset();
+                    } else {
+                        throw new Error(datos.message || 'Error');
+                    }
+                } catch (err) {
+                    estado.classList.add('error');
+                    estado.innerHTML = 'No se pudo enviar el mensaje. Escribime directo a <a href="mailto:lautarofigueroalnf@gmail.com">lautarofigueroalnf@gmail.com</a>.';
+                } finally {
+                    botonEnviar.disabled = false;
+                    botonEnviar.textContent = 'Enviar mensaje';
+                }
             });
 
             botonCerrar.addEventListener('click', cerrar);
