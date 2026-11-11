@@ -249,5 +249,59 @@
             <a href="https://github.com/Lautaro-Figueroa" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
     </footer>
+
+    <!-- Visor de imágenes: amplía las capturas de los proyectos -->
+    <div id="visor" class="visor" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+        <button type="button" class="visor-cerrar" aria-label="Cerrar imagen">&times;</button>
+        <figure class="visor-contenido">
+            <img id="visor-img" src="" alt="">
+            <figcaption id="visor-texto"></figcaption>
+        </figure>
+    </div>
+
+    <script>
+        (function () {
+            const visor = document.getElementById('visor');
+            const visorImg = document.getElementById('visor-img');
+            const visorTexto = document.getElementById('visor-texto');
+            const botonCerrar = visor.querySelector('.visor-cerrar');
+            let ultimoFoco = null;
+
+            function abrir(img) {
+                ultimoFoco = document.activeElement;
+                visorImg.src = img.src;
+                visorImg.alt = img.alt;
+                visorTexto.textContent = img.alt;
+                visor.hidden = false;
+                document.body.classList.add('sin-scroll');
+                botonCerrar.focus();
+            }
+
+            function cerrar() {
+                visor.hidden = true;
+                visorImg.src = '';
+                document.body.classList.remove('sin-scroll');
+                if (ultimoFoco) ultimoFoco.focus();
+            }
+
+            document.querySelectorAll('.project-img img').forEach(function (img) {
+                img.setAttribute('tabindex', '0');
+                img.setAttribute('role', 'button');
+                img.setAttribute('title', 'Ampliar imagen');
+                img.addEventListener('click', function () { abrir(img); });
+                img.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(img); }
+                });
+            });
+
+            botonCerrar.addEventListener('click', cerrar);
+            visor.addEventListener('click', function (e) {
+                if (e.target === visor) cerrar();   // clic en el fondo oscuro
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !visor.hidden) cerrar();
+            });
+        })();
+    </script>
 </body>
 </html>
