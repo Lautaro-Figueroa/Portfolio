@@ -3,257 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lautaro Figueroa | Desarrollador Backend</title>
-    <meta name="description" content="Portfolio de Lautaro Figueroa, desarrollador backend Jr. con C#, .NET y SQL Server.">
+    <title>Lautaro Figueroa | Desarrollador Backend Jr.</title>
+    <meta name="description" content="Portfolio de Lautaro Figueroa, desarrollador backend Jr. con C#, .NET y SQL Server. Estudiante avanzado de Programación en UTN.">
+    <meta name="theme-color" content="#07070d">
+
+    <!-- Vista previa al compartir el link (WhatsApp, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lautaro-figueroa.github.io/Portfolio/">
+    <meta property="og:title" content="Lautaro Figueroa | Desarrollador Backend Jr.">
+    <meta property="og:description" content="C# · .NET · SQL Server. Proyectos, formación y contacto.">
+    <meta property="og:image" content="https://lautaro-figueroa.github.io/Portfolio/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_AR">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilo.css">
     <script src="https://kit.fontawesome.com/31905eda52.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <nav id="navbar">
-            <div class="logo">Lautaro <span>Figueroa</span></div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#conocimientos">Conocimientos</a></li>
+    <!-- Fondo con manchas de color difuminadas -->
+    <div class="fondo" aria-hidden="true">
+        <span class="mancha mancha-1"></span>
+        <span class="mancha mancha-2"></span>
+        <span class="mancha mancha-3"></span>
+        <span class="grilla"></span>
+    </div>
+
+    <header class="encabezado">
+        <nav class="nav vidrio" aria-label="Principal">
+            <a href="#inicio" class="logo"><span class="logo-insignia">LF</span><span class="logo-texto">Lautaro Figueroa</span></a>
+            <button class="menu-boton" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="menu">
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#trayectoria">Trayectoria</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#contacto" class="nav-cta">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-
+        <!-- INICIO -->
         <section id="inicio" class="hero">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Lautaro Figueroa</h1>
-                    <h2>Desarrollador Backend Jr.</h2>
-                    <p class="ubicacion"><i class="fas fa-location-dot"></i> Rosario, Santa Fe · en proceso de mudanza a CABA</p>
-                    <p>Estudiante avanzado de la Tecnicatura Universitaria en Programación (UTN). Desarrollo backend con C#, .NET y SQL Server, con arquitectura por capas y trabajo colaborativo en Git. Uso herramientas de IA (Claude Code, Cursor) en mi flujo de desarrollo.</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/lautaro-figueroa-80b0b7108/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/Lautaro-Figueroa" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <div class="hero-tarjeta vidrio revelar">
+                <div class="hero-texto">
+                    <span class="disponible"><span class="punto"></span>Disponible para trabajar</span>
+                    <h1>Hola, soy <span class="degradado">Lautaro Figueroa</span></h1>
+                    <h2 class="hero-rol">Desarrollador Backend Jr. <span class="hero-stack">C# · .NET · SQL Server</span></h2>
+                    <p class="hero-ubicacion"><i class="fas fa-location-dot"></i> Rosario, Santa Fe · en proceso de mudanza a CABA</p>
+                    <p class="hero-descripcion">Estudiante avanzado de la Tecnicatura Universitaria en Programación (UTN). Desarrollo backend con arquitectura por capas, APIs REST y SQL Server, trabajando en equipo con Git. Uso herramientas de IA (Claude Code, Cursor) en mi flujo de desarrollo.</p>
+                    <div class="hero-acciones">
+                        <a href="CV-Lautaro-Figueroa.pdf" class="btn btn-primario" download><i class="fas fa-download"></i> Descargar CV</a>
+                        <a href="#proyectos" class="btn btn-vidrio">Ver proyectos <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="redes">
+                        <a href="https://www.linkedin.com/in/lautaro-figueroa-80b0b7108/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Lautaro-Figueroa" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="mailto:lautarofigueroalnf@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
-                    <a href="#proyectos" class="btn">Ver proyectos</a>
                 </div>
-                <div class="hero-image">
-                    <img src="IMG-20250730-WA0009.jpg" alt="Foto de Lautaro Figueroa">
+                <div class="hero-foto">
+                    <div class="foto-anillo">
+                        <img src="foto-perfil.jpg" alt="Foto de Lautaro Figueroa" width="640" height="640">
+                    </div>
+                    <span class="insignia insignia-1 vidrio"><i class="fas fa-code"></i> C# · .NET</span>
+                    <span class="insignia insignia-2 vidrio"><i class="fas fa-database"></i> SQL Server</span>
                 </div>
+                <ul class="datos">
+                    <li><strong>90 %</strong><span>de la carrera aprobada</span></li>
+                    <li><strong>6</strong><span>proyectos en equipo</span></li>
+                    <li><strong>9 años</strong><span>de experiencia laboral</span></li>
+                </ul>
             </div>
         </section>
 
-        <section id="conocimientos" class="conocimientos">
-            <div class="contenedor">
-                <h2 class="section-title">Conocimientos</h2>
-                <div class="grid-conocimientos">
-                    <div class="categoria-conocimiento">
-                        <h3>Backend & Bases de Datos</h3>
-                        <div class="lista-conocimientos">
-                            <div class="conocimiento">
-                                <img src="Csharp_Logo.png" alt="C#" class="icono">
-                                <span>C#</span>
-                            </div>
-                            <div class="conocimiento">
-                                <img src="net.png" alt=".NET Framework" class="icono">
-                                <span>.NET / ASP.NET</span>
-                            </div>
-                            <div class="conocimiento">
-                                <img src="SQLSERVER.png" alt="SQL Server" class="icono">
-                                <span>SQL Server</span>
-                            </div>
-                            <div class="conocimiento">
-                                <i class="fab fa-java icono icono-fa"></i>
-                                <span>Java</span>
-                            </div>
-                            <div class="conocimiento">
-                                <img src="C++.png" alt="C++" class="icono">
-                                <span>C++</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="categoria-conocimiento">
-                        <h3>Frontend</h3>
-                        <div class="lista-conocimientos">
-                            <div class="conocimiento">
-                                <img src="html.png" alt="HTML5" class="icono">
-                                <span>HTML5</span>
-                            </div>
-                            <div class="conocimiento">
-                                <img src="CSS.png" alt="CSS3" class="icono">
-                                <span>CSS3</span>
-                            </div>
-                            <div class="conocimiento">
-                                <img src="JavaScript-logo.png" alt="JavaScript" class="icono">
-                                <span>JavaScript</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="categoria-conocimiento">
-                        <h3>Herramientas</h3>
-                        <div class="lista-conocimientos">
-                            <div class="conocimiento">
-                                <img src="GIT.png" alt="Git" class="icono">
-                                <span>Git / GitHub</span>
-                            </div>
-                            <div class="conocimiento">
-                                <img src="Visual_Studio.png" alt="Visual Studio" class="icono">
-                                <span>Visual Studio</span>
-                            </div>
-                            <div class="conocimiento">
-                                <img src="VISUALCODE.png" alt="VS Code" class="icono">
-                                <span>VS Code</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="categoria-conocimiento">
-                        <h3>Desarrollo con IA</h3>
-                        <div class="lista-conocimientos">
-                            <div class="conocimiento">
-                                <img src="claude-code.png" alt="Claude Code" class="icono">
-                                <span>Claude Code</span>
-                            </div>
-                            <div class="conocimiento">
-                                <img src="cursor.png" alt="Cursor" class="icono icono-redondeado">
-                                <span>Cursor</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- STACK -->
+        <section id="stack" class="seccion">
+            <div class="seccion-cabecera revelar">
+                <span class="seccion-etiqueta">Stack</span>
+                <h2 class="seccion-titulo">Tecnologías que uso</h2>
+            </div>
+            <div class="stack-grilla">
+                <article class="stack-tarjeta vidrio revelar destacada">
+                    <h3><i class="fas fa-server"></i> Backend y bases de datos</h3>
+                    <ul class="chips">
+                        <li><img src="Csharp_Logo.png" alt="" class="chip-icono">C#</li>
+                        <li><img src="net.png" alt="" class="chip-icono">.NET / ASP.NET</li>
+                        <li><i class="fas fa-plug chip-fa"></i>Web API / REST</li>
+                        <li><img src="SQLSERVER.png" alt="" class="chip-icono">SQL Server / T-SQL</li>
+                        <li><i class="fab fa-java chip-fa"></i>Java</li>
+                        <li><img src="C++.png" alt="" class="chip-icono">C++</li>
+                    </ul>
+                </article>
+                <article class="stack-tarjeta vidrio revelar">
+                    <h3><i class="fas fa-palette"></i> Frontend</h3>
+                    <ul class="chips">
+                        <li><img src="html.png" alt="" class="chip-icono">HTML5</li>
+                        <li><img src="CSS.png" alt="" class="chip-icono">CSS3</li>
+                        <li><img src="JavaScript-logo.png" alt="" class="chip-icono">JavaScript</li>
+                        <li><i class="fas fa-bolt chip-fa"></i>Blazor</li>
+                    </ul>
+                </article>
+                <article class="stack-tarjeta vidrio revelar">
+                    <h3><i class="fas fa-screwdriver-wrench"></i> Herramientas</h3>
+                    <ul class="chips">
+                        <li><img src="GIT.png" alt="" class="chip-icono">Git / GitHub</li>
+                        <li><img src="Visual_Studio.png" alt="" class="chip-icono">Visual Studio</li>
+                        <li><img src="VISUALCODE.png" alt="" class="chip-icono">VS Code</li>
+                        <li><i class="fas fa-paper-plane chip-fa"></i>Postman</li>
+                    </ul>
+                </article>
+                <article class="stack-tarjeta vidrio revelar">
+                    <h3><i class="fas fa-wand-magic-sparkles"></i> Desarrollo con IA</h3>
+                    <ul class="chips">
+                        <li><img src="claude-code.png" alt="" class="chip-icono">Claude Code</li>
+                        <li><img src="cursor.png" alt="" class="chip-icono redondeado">Cursor</li>
+                    </ul>
+                </article>
             </div>
         </section>
 
-        <section id="proyectos" class="project">
-            <h2 class="section-title">Proyectos</h2>
-            <div class="projects-container">
-
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="ecommerce-secondhand.png" alt="Ecommerce SecondHand">
+        <!-- TRAYECTORIA -->
+        <section id="trayectoria" class="seccion">
+            <div class="seccion-cabecera revelar">
+                <span class="seccion-etiqueta">Trayectoria</span>
+                <h2 class="seccion-titulo">Formación y experiencia</h2>
+            </div>
+            <ol class="linea-tiempo">
+                <li class="hito revelar">
+                    <span class="hito-icono"><i class="fas fa-graduation-cap"></i></span>
+                    <div class="hito-tarjeta vidrio">
+                        <span class="hito-fecha">2023 – 2027 (previsto)</span>
+                        <h3>Tecnicatura Universitaria en Programación</h3>
+                        <p class="hito-lugar">Universidad Tecnológica Nacional (UTN)</p>
+                        <ul>
+                            <li>90 % de la carrera aprobada.</li>
+                            <li>Notas 9 y 10 en Programación I a IV, Bases de Datos I y II y Metodología de Sistemas I y II.</li>
+                            <li>Proyecto final integrador en equipo, en curso: <strong>Altru</strong>.</li>
+                        </ul>
                     </div>
-                    <div class="project-info">
+                </li>
+                <li class="hito revelar">
+                    <span class="hito-icono"><i class="fas fa-wand-magic-sparkles"></i></span>
+                    <div class="hito-tarjeta vidrio">
+                        <span class="hito-fecha">2026</span>
+                        <h3>Formación complementaria en IA</h3>
+                        <ul>
+                            <li>Certificado de Iniciación al Desarrollo con IA — BIG school (marzo).</li>
+                            <li>Cursor con Python: desarrollo inteligente con IA — Santander Open Academy (febrero).</li>
+                            <li>Semana de Python en la práctica — Daxus Latam (febrero).</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="hito revelar">
+                    <span class="hito-icono"><i class="fas fa-briefcase"></i></span>
+                    <div class="hito-tarjeta vidrio">
+                        <span class="hito-fecha">2017 – Actualidad</span>
+                        <h3>Encargado de Atención y Soporte Operativo</h3>
+                        <p class="hito-lugar">Mimesis Impresión Digital · Rosario</p>
+                        <ul>
+                            <li>Atención al cliente y resolución diaria de incidencias en sistemas de facturación y equipos.</li>
+                            <li>Mantenimiento preventivo y correctivo de hardware, red local y puestos de trabajo.</li>
+                            <li>Coordinación de operaciones técnicas bajo presión, garantizando la continuidad del servicio.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section id="proyectos" class="seccion">
+            <div class="seccion-cabecera revelar">
+                <span class="seccion-etiqueta">Proyectos</span>
+                <h2 class="seccion-titulo">Lo que construí</h2>
+                <p class="seccion-bajada">Tocá una captura para verla en grande.</p>
+            </div>
+
+            <!-- Proyecto destacado -->
+            <article class="proyecto-destacado vidrio revelar">
+                <div class="destacado-portada">
+                    <img src="altru.png" alt="Altru: pantalla de inicio del administrador con estadísticas y accesos a instituciones, finanzas y voluntariado" loading="lazy">
+                </div>
+                <div class="destacado-info">
+                    <div class="destacado-etiquetas">
+                        <span class="estado"><span class="punto"></span>En desarrollo</span>
+                        <span class="estado estado-gris">Proyecto final · Equipo de 4</span>
+                    </div>
+                    <h3>Altru — Plataforma solidaria</h3>
+                    <p>Conecta instituciones, donantes y voluntarios: publicación y reserva de lotes de donaciones, inscripción a voluntariados y gestión de finanzas, con acceso por roles.</p>
+                    <p class="mi-aporte"><strong>Mi aporte:</strong> menú por rol, componentes compartidos, accesibilidad y el módulo de Voluntariado completo (inscripción, padrón con filtros, actividades y asignación de voluntarios). Reviso e integro Pull Requests del equipo. Desarrollado con Claude Code como asistente.</p>
+                    <ul class="etiquetas">
+                        <li>C#</li><li>.NET 10</li><li>Blazor</li><li>EF Core</li><li>ASP.NET Identity</li><li>SQL Server</li>
+                    </ul>
+                    <p class="nota-privado"><i class="fas fa-lock"></i> Repositorio privado (entrega académica)</p>
+                </div>
+            </article>
+
+            <div class="proyectos-grilla">
+                <article class="proyecto vidrio revelar">
+                    <div class="proyecto-imagen">
+                        <img src="ecommerce-secondhand.png" alt="Ecommerce SecondHand: página de inicio con buscador y artículos" loading="lazy">
+                    </div>
+                    <div class="proyecto-info">
                         <h3>Ecommerce SecondHand</h3>
-                        <p>E-commerce de artículos usados con reservas, carrito persistido en base de datos, pago de seña y paneles Usuario / Admin / SuperAdmin. Trabajé en la capa de negocio, el carrito y el flujo de reservas.</p>
-                        <div class="project-tech">
-                            <span>C#</span>
-                            <span>ASP.NET</span>
-                            <span>SQL Server</span>
-                            <span class="tag-equipo">Trabajo en equipo</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Lautaro-Figueroa/Ecommerce-SecondHand" target="_blank"><i class="fab fa-github"></i> Ver código</a>
-                        </div>
+                        <p>E-commerce de artículos usados con reservas, carrito persistido en base de datos, pago de seña y paneles por rol. Trabajé en la capa de negocio, el carrito y el flujo de reservas.</p>
+                        <ul class="etiquetas"><li>C#</li><li>ASP.NET</li><li>SQL Server</li><li class="equipo">Equipo</li></ul>
+                        <a class="proyecto-link" href="https://github.com/Lautaro-Figueroa/Ecommerce-SecondHand" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver código</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="api-postman.png" alt="API probada en Postman: GET /api/Productos con respuesta 200 OK">
+                <article class="proyecto vidrio revelar">
+                    <div class="proyecto-imagen">
+                        <img src="api-postman.png" alt="API REST probada en Postman: GET /api/Productos con respuesta 200 OK" loading="lazy">
                     </div>
-                    <div class="project-info">
+                    <div class="proyecto-info">
                         <h3>API REST Catálogo de Productos</h3>
-                        <p>API con endpoints CRUD de productos y carga de imágenes, con validaciones y respuestas HTTP según el resultado. Implementé el listado y el alta de productos con sus validaciones.</p>
-                        <div class="project-tech">
-                            <span>C#</span>
-                            <span>ASP.NET Web API</span>
-                            <span>SQL Server</span>
-                            <span class="tag-equipo">Trabajo en equipo</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Lautaro-Figueroa/TP-APIs-Equipo-10A" target="_blank"><i class="fab fa-github"></i> Ver código</a>
-                        </div>
+                        <p>Endpoints CRUD de productos y carga de imágenes, con validaciones y respuestas HTTP según el resultado. Implementé el listado y el alta de productos con sus validaciones.</p>
+                        <ul class="etiquetas"><li>C#</li><li>ASP.NET Web API</li><li>SQL Server</li><li class="equipo">Equipo</li></ul>
+                        <a class="proyecto-link" href="https://github.com/Lautaro-Figueroa/TP-APIs-Equipo-10A" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver código</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="bd-diagrama.png" alt="Diagrama del modelo de datos de Venta de Garage en SQL Server">
+                <article class="proyecto vidrio revelar">
+                    <div class="proyecto-imagen">
+                        <img src="bd-diagrama.png" alt="Diagrama del modelo de datos de Venta de Garage en SQL Server" loading="lazy">
                     </div>
-                    <div class="project-info">
-                        <h3>Base de Datos – Venta de Garage</h3>
-                        <p>Modelo de datos con reservas, ventas y auditoría. Incluye stored procedures, triggers, vistas y funciones en T-SQL. Desarrollé tablas, un trigger, una función y una vista.</p>
-                        <div class="project-tech">
-                            <span>SQL Server</span>
-                            <span>T-SQL</span>
-                            <span class="tag-equipo">Trabajo en equipo</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Lautaro-Figueroa/TP-Base-de-datos2-Grupo50" target="_blank"><i class="fab fa-github"></i> Ver código</a>
-                        </div>
+                    <div class="proyecto-info">
+                        <h3>Base de Datos — Venta de Garage</h3>
+                        <p>Modelo de datos con reservas, ventas y auditoría, con stored procedures, triggers, vistas y funciones en T-SQL. Desarrollé tablas, un trigger, una función y una vista.</p>
+                        <ul class="etiquetas"><li>SQL Server</li><li>T-SQL</li><li class="equipo">Equipo</li></ul>
+                        <a class="proyecto-link" href="https://github.com/Lautaro-Figueroa/TP-Base-de-datos2-Grupo50" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver código</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="promo-gana.jpg" alt="Promo Gana: página de premios">
+                <article class="proyecto vidrio revelar">
+                    <div class="proyecto-imagen">
+                        <img src="promo-gana.jpg" alt="Promo Gana: página de premios" loading="lazy">
                     </div>
-                    <div class="project-info">
-                        <h3>Promo Gana – Canje de Vouchers</h3>
-                        <p>Aplicación web para canjear vouchers: validación de códigos, selección de premios, registro de clientes y email de confirmación. Desarrollé el canje, los premios y el envío de mails.</p>
-                        <div class="project-tech">
-                            <span>C#</span>
-                            <span>ASP.NET</span>
-                            <span>SQL Server</span>
-                            <span class="tag-equipo">Trabajo en equipo</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Lautaro-Figueroa/TP-Web-Equipo-10A" target="_blank"><i class="fab fa-github"></i> Ver código</a>
-                        </div>
+                    <div class="proyecto-info">
+                        <h3>Promo Gana — Canje de Vouchers</h3>
+                        <p>Web para canjear vouchers: validación de códigos, selección de premios, registro de clientes y email de confirmación. Desarrollé el canje, los premios y el envío de mails.</p>
+                        <ul class="etiquetas"><li>C#</li><li>ASP.NET</li><li>SQL Server</li><li class="equipo">Equipo</li></ul>
+                        <a class="proyecto-link" href="https://github.com/Lautaro-Figueroa/TP-Web-Equipo-10A" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver código</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Diseño sin título.png" alt="Sistema de Gestión de artículos">
+                <article class="proyecto vidrio revelar">
+                    <div class="proyecto-imagen">
+                        <img src="Diseño sin título.png" alt="Gestión de Artículos: aplicación de escritorio" loading="lazy">
                     </div>
-                    <div class="project-info">
+                    <div class="proyecto-info">
                         <h3>Gestión de Artículos</h3>
-                        <p>Aplicación de escritorio con ABM de artículos, marcas y categorías, filtros y galería de imágenes. Desarrollé la administración de marcas y mejoré el manejo de conexiones a la base de datos.</p>
-                        <div class="project-tech">
-                            <span>C#</span>
-                            <span>WinForms</span>
-                            <span>SQL Server</span>
-                            <span class="tag-equipo">Trabajo en equipo</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Lautaro-Figueroa/Gestion-Articulos-WinForms" target="_blank"><i class="fab fa-github"></i> Ver código</a>
-                        </div>
+                        <p>Aplicación de escritorio con ABM de artículos, marcas y categorías, filtros y galería de imágenes. Desarrollé la administración de marcas y mejoré el manejo de conexiones.</p>
+                        <ul class="etiquetas"><li>C#</li><li>WinForms</li><li>SQL Server</li><li class="equipo">Equipo</li></ul>
+                        <a class="proyecto-link" href="https://github.com/Lautaro-Figueroa/Gestion-Articulos-WinForms" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver código</a>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
-        <section id="contacto" class="contacto">
-            <h2 class="section-title">Contacto</h2>
-            <p>¿Tenés una propuesta o una consulta? Escribime a <a class="link-mail" href="mailto:lautarofigueroalnf@gmail.com">lautarofigueroalnf@gmail.com</a> o completá el formulario.</p>
-            <form id="form-contacto" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="0104efac-a22c-40a5-835c-406478a489a1">
-                <input type="hidden" name="subject" value="Nuevo mensaje desde tu portfolio">
-                <input type="hidden" name="from_name" value="Portfolio Lautaro Figueroa">
-                <!-- Anti-spam: campo invisible que solo completan los robots -->
-                <input type="checkbox" name="botcheck" class="campo-oculto" tabindex="-1" autocomplete="off">
+        <!-- CONTACTO -->
+        <section id="contacto" class="seccion">
+            <div class="contacto-tarjeta vidrio revelar">
+                <div class="contacto-texto">
+                    <span class="seccion-etiqueta">Contacto</span>
+                    <h2 class="seccion-titulo">¿Hablamos?</h2>
+                    <p>¿Tenés una propuesta o una consulta? Escribime y te respondo a la brevedad.</p>
+                    <ul class="contacto-datos">
+                        <li><a href="mailto:lautarofigueroalnf@gmail.com"><i class="fas fa-envelope"></i> lautarofigueroalnf@gmail.com</a></li>
+                        <li><a href="https://www.linkedin.com/in/lautaro-figueroa-80b0b7108/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                        <li><a href="https://github.com/Lautaro-Figueroa" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="CV-Lautaro-Figueroa.pdf" download><i class="fas fa-file-arrow-down"></i> Descargar CV</a></li>
+                    </ul>
+                </div>
+                <form id="form-contacto" class="formulario" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="0104efac-a22c-40a5-835c-406478a489a1">
+                    <input type="hidden" name="subject" value="Nuevo mensaje desde tu portfolio">
+                    <input type="hidden" name="from_name" value="Portfolio Lautaro Figueroa">
+                    <!-- Anti-spam: campo invisible que solo completan los robots -->
+                    <input type="checkbox" name="botcheck" class="campo-oculto" tabindex="-1" autocomplete="off">
 
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="name" placeholder="Tu nombre" required>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="name" placeholder="Tu nombre" autocomplete="name" required>
 
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required>
 
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="message" rows="5" placeholder="Escribí tu mensaje acá" required></textarea>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="message" rows="5" placeholder="Escribí tu mensaje acá" required></textarea>
 
-                <button type="submit" class="btn">Enviar mensaje</button>
-                <p id="form-estado" class="form-estado" role="status" aria-live="polite"></p>
-            </form>
+                    <button type="submit" class="btn btn-primario">Enviar mensaje <i class="fas fa-paper-plane"></i></button>
+                    <p id="form-estado" class="form-estado" role="status" aria-live="polite"></p>
+                </form>
+            </div>
         </section>
-
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Lautaro Figueroa</p>
-            <a href="https://www.linkedin.com/in/lautaro-figueroa-80b0b7108/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Lautaro-Figueroa" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <footer class="pie">
+        <p>© 2026 Lautaro Figueroa · Hecho con HTML, CSS y JavaScript</p>
+        <div class="pie-redes">
+            <a href="https://www.linkedin.com/in/lautaro-figueroa-80b0b7108/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/Lautaro-Figueroa" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
     </footer>
 
@@ -268,6 +325,41 @@
 
     <script>
         (function () {
+            // --- Menú en celular ---
+            const nav = document.querySelector('.nav');
+            const menuBoton = document.querySelector('.menu-boton');
+            menuBoton.addEventListener('click', function () {
+                const abierto = nav.classList.toggle('abierto');
+                menuBoton.setAttribute('aria-expanded', abierto);
+                menuBoton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+            });
+            document.querySelectorAll('.nav-links a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    nav.classList.remove('abierto');
+                    menuBoton.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // --- Encabezado más opaco al bajar ---
+            const encabezado = document.querySelector('.encabezado');
+            function alScroll() { encabezado.classList.toggle('con-scroll', window.scrollY > 20); }
+            window.addEventListener('scroll', alScroll, { passive: true });
+            alScroll();
+
+            // --- Aparición suave al hacer scroll ---
+            const revelables = document.querySelectorAll('.revelar');
+            if ('IntersectionObserver' in window) {
+                const observador = new IntersectionObserver(function (entradas) {
+                    entradas.forEach(function (e) {
+                        if (e.isIntersecting) { e.target.classList.add('visible'); observador.unobserve(e.target); }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+                revelables.forEach(function (el) { observador.observe(el); });
+            } else {
+                revelables.forEach(function (el) { el.classList.add('visible'); });
+            }
+
+            // --- Visor de imágenes ---
             const visor = document.getElementById('visor');
             const visorImg = document.getElementById('visor-img');
             const visorTexto = document.getElementById('visor-texto');
@@ -283,15 +375,13 @@
                 document.body.classList.add('sin-scroll');
                 botonCerrar.focus();
             }
-
             function cerrar() {
                 visor.hidden = true;
                 visorImg.src = '';
                 document.body.classList.remove('sin-scroll');
                 if (ultimoFoco) ultimoFoco.focus();
             }
-
-            document.querySelectorAll('.project-img img').forEach(function (img) {
+            document.querySelectorAll('.proyecto-imagen img, .destacado-portada img').forEach(function (img) {
                 img.setAttribute('tabindex', '0');
                 img.setAttribute('role', 'button');
                 img.setAttribute('title', 'Ampliar imagen');
@@ -300,11 +390,20 @@
                     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(img); }
                 });
             });
+            botonCerrar.addEventListener('click', cerrar);
+            visor.addEventListener('click', function (e) { if (e.target === visor) cerrar(); });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    if (!visor.hidden) cerrar();
+                    else if (nav.classList.contains('abierto')) menuBoton.click();
+                }
+            });
 
-            // Formulario de contacto: envío sin salir de la página
+            // --- Formulario de contacto (Web3Forms), sin salir de la página ---
             const form = document.getElementById('form-contacto');
             const estado = document.getElementById('form-estado');
             const botonEnviar = form.querySelector('button[type="submit"]');
+            const textoBoton = botonEnviar.innerHTML;
             form.addEventListener('submit', async function (e) {
                 e.preventDefault();
                 botonEnviar.disabled = true;
@@ -330,16 +429,8 @@
                     estado.innerHTML = 'No se pudo enviar el mensaje. Escribime directo a <a href="mailto:lautarofigueroalnf@gmail.com">lautarofigueroalnf@gmail.com</a>.';
                 } finally {
                     botonEnviar.disabled = false;
-                    botonEnviar.textContent = 'Enviar mensaje';
+                    botonEnviar.innerHTML = textoBoton;
                 }
-            });
-
-            botonCerrar.addEventListener('click', cerrar);
-            visor.addEventListener('click', function (e) {
-                if (e.target === visor) cerrar();   // clic en el fondo oscuro
-            });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && !visor.hidden) cerrar();
             });
         })();
     </script>
